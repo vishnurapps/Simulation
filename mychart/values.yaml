@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: sim
-  tag: 1.0
+  repository: "simimage"
+  tag: "1.0"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -36,7 +36,7 @@ securityContext: {}
 service:
   type: NodePort
   port: 8000
-  nodePort: 30021
+  nodePort: 30080
 
 ingress:
   enabled: false

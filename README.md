@@ -36,6 +36,13 @@ helm repo update
 helm install --name example ./mychart
 ```
 
+## get application details
+```
+export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services example-mychart)
+export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+echo http://$NODE_IP:$NODE_PORT
+```
+
 ## delete existing deployment and service
 ```
 kubectl delete deployment example-mychart

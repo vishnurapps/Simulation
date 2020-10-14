@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simapp-svc
+  labels:
+    app: simapp
+spec:
+  type: NodePort
+  ports:
+  - port: 8000
+    nodePort: 30080
+  selector:
+    app: simapp

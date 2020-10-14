@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simapp
+  template:
+    metadata:
+      labels:
+        app: simapp
+    spec:
+      containers:
+      - name: simapp
+        image: simimage:1.0
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - mountPath: /tmp
+          name: test-vol
+      volumes:
+      - name: test-vol
+        hostPath:
+          path: /test-vol

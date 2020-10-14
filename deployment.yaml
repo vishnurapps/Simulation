@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp1
+  name: deep-tek-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simapp
+      app: deep-tek-app
   template:
     metadata:
       labels:
-        app: simapp
+        app: deep-tek-app
     spec:
       containers:
-      - name: simapp
-        image: simimage:1.0
+      - name: deep-tek-app
+        image: deep-tek-image:1.0
         ports:
         - containerPort: 8000
         volumeMounts:

@@ -59,8 +59,8 @@ func PostPatient(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fmt.Println("Sample")
+	fmt.Println("Service started.....")
 	router := mux.NewRouter()
-	router.HandleFunc("/add", PostPatient).Methods("POST")
+	router.HandleFunc("/ExecuteDeepTekApp", PostPatient).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8000", router))
 }

@@ -20,5 +20,5 @@ kubectl create -f service.yaml
 ## do post
 
 ```
-curl --header "Content-Type: application/json" --request POST --data '{"Pid": "001","Pname":"Vishnu"}' host01:30080/add
+curl --header "Content-Type: application/json" --request POST --data '{"Pid": "001","Pname":"Vishnu"}' host01:30080/ExecuteDeepTekApp
 ```
